@@ -1,0 +1,100 @@
+#navBar #Home{
+color: white;
+}
+#navBar #Titulos{
+    color: gold;
+}
+
+/* INICIO TÍTULOS */
+#divTitulos{
+    height: 2000px;
+    background-color: rgba(0, 0, 0, 0.815);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.nome{
+    color: white;
+}
+#containerTitulos{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 1000px;
+    background-color: antiquewhite;
+}
+.titulos{
+    background-color: whitesmoke;
+    width: 700px;
+    border: solid 2px black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.titulos img{
+    width: 120px;
+    height: 140px;
+}
+h1 {
+    margin: 0px;
+}
+.titulos .liberta{
+    width: 90px;
+    height: 190px;
+}
+#ElencoMundial{
+    height: 140px;
+    width: 210px;
+}
+#Elencoliberta{
+    height: 140px;
+    width: 210px;
+}
+.titulos #brasileiroMasculino {
+    width: 170px;
+    height: 190px;
+}
+#ElencoBrasileirao{
+    height: 140px;
+    width: 210px;
+}
+#EscritoBrasileirao{
+    margin: 0px;
+    height: 205px;
+}
+.titulos #paulistaMasculino {
+    width: 180px;
+    height: 140px;
+}
+#ElencoPaulista2019{
+    height: 140px;
+    width: 210px;
+}
+#ElencoCopaDoBrasil{
+    height: 140px;
+    width: 210px;
+}
+.titulos #paulistaFeminino {
+    width: 170px;
+    height: 120px;
+}
+#LibertaFeminino{
+    height: 140px;
+    width: 230px;
+}
+#BrasileiroFeminino{
+    height: 140px;
+    width: 230px;
+}
+#PaulistaFeminino{
+    height: 140px;
+    width: 230px;
+}
+#tacaSupercopa{
+    width: 200px;
+    height: 140px; 
+}
+#ElencoSupercopa{
+    width: 240px;
+    height: 140px; 
+}

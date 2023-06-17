@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/Login.css">
+    <link rel="icon" href="imagens/escudo-corinthians-2023.svg">
+</head>
+
+<body>
+
+     <!-- INICIO HEADER -->
+    
+       <div id="navBar">
+        <img src="imagens/escudo-corinthians-2023.svg" alt="Emblema do corinthians" id="Emblema">
+        <div id="Navegacao">
+            <a href="index.html" id="Home" class="links">Home</a>
+            <a href="Noticias.html"  class="links">Notícias</a>
+            <a href="Titulos.html" class="links">Títulos</a>
+        </div>
+        <div id="LogarRegistrar">
+            <a href="login.html" id="Login" class="links">Login</a>
+            <span>|</span>
+            <a href="cadastro.html" class="links">Cadastro</a>
+        </div>
+    </div> 
+
+    <!-- FINAL HEADER -->
+
+<!-- LOGIN -->
+
+<div id="FundoLogin">
+            <div id="Formulario">
+                <h1>Login</h1>
+                <div id="ItensLogin">                
+                    <p id="textoFormulario">Email:</p>
+                    <input type="email" id="iptEmail">
+                    <p id="textoFormulario">Senha:</p>
+                    <input type="password" id="iptSenha">
+                    <br><br>
+                </div>
+                <br>
+                <div id="ContainerBotao">
+                    <button onclick="entrar()" id="botao">Entrar</button> 
+                </div>
+              
+                <div id="textoFinal">
+                    <p>ainda não tem conta ?</p>
+                    <a href="Registro.html" class="links">Cadastre-se</a>
+                </div>     
+            </div>
+            <div class="alerta_erro">
+                <br><br><br><br><br><br>
+                <div class="card_erro" id="cardErro">
+                    <span id="mensagem_erro"></span>
+                </div>
+            </div>
+</div>
+
+<!-- FINAL LOGIN -->
+
+   <!-- INICIO FOOTER -->
+   <div id="footer">
+
+    <div id="divLadoEsquerdo">
+        <p id="TituloRedesSociais">REDES SOCIAIS</p>
+        <div id="instaNome">
+            <img src="imagens/icons8-instagram-48.png" alt="Logo instagram" class="logoRedes">
+            <p class="NomeDoSite">CorinthiansNews</p>
+        </div>
+        <div id="faceNome">
+            <img src="imagens/icons8-facebook-48.png" alt="Logo Facebook" class="logoRedes">
+            <p class="NomeDoSite">CorinthiansNews</p>
+        </div>
+    </div>
+    <div id="centroFooter">
+        <p id="TituloRedesSociais">LINKS DA HOME</p>
+        <div id="containerTexntoCentro">
+            <a href="index.html#textoSobreOsite" id="textoCentro">Sobre este blog</a>
+            <a href="index.html#textoSobreOsite" id="textoCentro">Tabela Brasileirão</a>
+            <a href="index.html#Simulador" id="textoCentro">Simulador de porcentagem de vitória</a> 
+        </div>
+        
+    </div>
+    <div id="divLadoDireito">
+        <p id="TituloRedesSociais">CONTATO</p>
+
+        <div id="conteinarEmail">
+            
+            <img src="imagens/icons8-gmail-48.png" alt="icon gmail" class="logoRedes">
+            <p>CorinthiansNews@gmail.com</p>
+        </div>
+
+    </div>
+</div>
+<!-- FINAL FOOTER -->
+</body>
+
+</html>
+
+<script>
+
+
+    function entrar() {
+        // aguardar();
+
+        var emailVar = iptEmail.value;
+        var senhaVar = iptSenha.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.idUsuario;
+
+                    setTimeout(function () {
+                        window.location = "escalacao.html";
+                    }, 0); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+                alert("Houve um erro ao tentar realizar o login!")
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>

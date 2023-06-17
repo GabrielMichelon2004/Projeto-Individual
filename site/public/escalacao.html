@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escalação</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/escalacao.css">
+    <link rel="icon" href="imagens/escudo-corinthians-2023.svg">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+    <!-- INICIO HEADER -->
+    <div id="navBar">
+        <img src="imagens/escudo-corinthians-2023.svg" alt="Emblema do corinthians" id="Emblema">
+        <div id="Navegacao">
+            <a href="index.html" id="Home" class="links">Home</a>
+            <a href="Noticias.html" class="links">Notícias</a>
+            <a href="Titulos.html" id="Titulos" class="links">Títulos</a>
+        </div>
+        <div id="LogarRegistrar">
+            <a href="login.html" class="links">Login</a>
+            <span>|</span>
+            <a href="cadastro.html" class="links">Cadastro</a>
+        </div>
+    </div>
+    <!-- FINAL HEADER -->
+
+    <!-- Inico página -->
+    <div id="escalacao">
+        <br><br>
+        <h1>Monte sua escalação</h1>
+        <br>
+        <div id="containerCampo">
+            <div id="campo">
+                <div id="atacante">
+                    <select id="ATA">
+                        <option value="">Escolha um atacante</option>
+                        <option value="CHRYSTIAN">CHRYSTIAN</option>
+                        <option value="GUSTAVO SILVA">GUSTAVO SILVA</option>
+                        <option value="PEDRO">PEDRO</option>
+                        <option value="ROMERO">ROMERO</option>
+                        <option value="RÓGER GUEDES">RÓGER GUEDES</option>
+                        <option value="RUAN OLIVEIRA">RUAN OLIVEIRA</option>
+                        <option value="YURI ALBERTO">YURI ALBERTO</option>
+                    </select>
+                </div>
+                <div id="pontas">
+                    <select id="PE">
+                        <option value="">Escolha um ponta esquerda</option>
+                        <option value="CHRYSTIAN">CHRYSTIAN</option>
+                        <option value="GUSTAVO SILVA">GUSTAVO SILVA</option>
+                        <option value="PEDRO">PEDRO</option>
+                        <option value="ROMERO">ROMERO</option>
+                        <option value="RÓGER GUEDES">RÓGER GUEDES</option>
+                        <option value="RUAN OLIVEIRA">RUAN OLIVEIRA</option>
+                        <option value="YURI ALBERTO">YURI ALBERTO</option>
+                        <option value="ADSON">ADSON</option>
+
+                    </select>
+                    <select id="PD">
+                        <option value="">Escolha um ponta direita</option>
+                        <option value="CHRYSTIAN">CHRYSTIAN</option>
+                        <option value="GUSTAVO SILVA">GUSTAVO SILVA</option>
+                        <option value="PEDRO">PEDRO</option>
+                        <option value="ROMERO">ROMERO</option>
+                        <option value="RÓGER GUEDES">RÓGER GUEDES</option>
+                        <option value="RUAN OLIVEIRA">RUAN OLIVEIRA</option>
+                        <option value="YURI ALBERTO">YURI ALBERTO</option>
+                        <option value="ADSON">ADSON</option>
+                    </select>
+                </div>
+                <br><br><br><br><br><br><br><br><br><br>
+                <div id="meias">
+
+                    <select id="MEIe">
+                        <option value="">escolher um meia</option>
+                        <option value="RENATO AUGUSTO">RENATO AUGUSTO</option>
+                        <option value="MATHEUS ARAÚJO">MATHEUS ARAÚJO</option>
+                        <option value="GIULIANO">GIULIANO</option>
+                        <option value="RONI">RONI</option>
+                        <option value="PAULINHO">PAULINHO</option>
+                        <option value="MAYCON">MAYCON</option>
+                        <option value="FAUSTO VERA">FAUSTO VERA</option>
+                        <option value="DU QUEIROZ">DU QUEIROZ</option>
+                        <option value="CANTILLO">CANTILLO</option>
+                    </select>
+                    <select id="MEId">
+                        <option value="">escolher um meia</option>
+                        <option value="RENATO AUGUSTO">RENATO AUGUSTO</option>
+                        <option value="MATHEUS ARAÚJO">MATHEUS ARAÚJO</option>
+                        <option value="GIULIANO">GIULIANO</option>
+                        <option value="RONI">RONI</option>
+                        <option value="PAULINHO">PAULINHO</option>
+                        <option value="MAYCON">MAYCON</option>
+                        <option value="FAUSTO VERA">FAUSTO VERA</option>
+                        <option value="DU QUEIROZ">DU QUEIROZ</option>
+                        <option value="CANTILLO">CANTILLO</option>
+                    </select>
+                </div>
+                <br><br><br>
+                <div id="volante">
+                    <select id="VOL">
+                        <option value="">escolher um volante</option>
+                        <option value="RENATO AUGUSTO">RENATO AUGUSTO</option>
+                        <option value="MATHEUS ARAÚJO">MATHEUS ARAÚJO</option>
+                        <option value="GIULIANO">GIULIANO</option>
+                        <option value="RONI">RONI</option>
+                        <option value="PAULINHO">PAULINHO</option>
+                        <option value="MAYCON">MAYCON</option>
+                        <option value="FAUSTO VERA">FAUSTO VERA</option>
+                        <option value="DU QUEIROZ">DU QUEIROZ</option>
+                        <option value="CANTILLO">CANTILLO</option>
+                    </select>
+                </div>
+                <br><br><br><br><br>
+                <div id="laterais">
+                    <select id="LTe">
+                        <option value="">Escolha um lateral esquerdo</option>
+                        <option value="FÁBIO SANTOS">FÁBIO SANTOS</option>
+                        <option value="MATHEUS BIDU">MATHEUS BIDU</option>
+                        <option value="FAGNER">FAGNER</option>
+                        <option value="RAFAEL RAMOS">RAFAEL RAMOS</option>
+                    </select>
+                    <select id="LTd">
+                        <option value="">Escolha um lateral esquerdo</option>
+                        <option value="FÁBIO SANTOS">FÁBIO SANTOS</option>
+                        <option value="MATHEUS BIDU">MATHEUS BIDU</option>
+                        <option value="FAGNER">FAGNER</option>
+                        <option value="RAFAEL RAMOS">RAFAEL RAMOS</option>
+                    </select>
+                </div>
+                <br><br><br>
+                <div id="zagueiro">
+                    <select id="ZAGe">
+                        <option value="">Escolha um zagueiro</option>
+                        <option value="BALBUENA">BALBUENA</option>
+                        <option value="BRUNO MÉNDEZ">BRUNO MÉNDEZ</option>
+                        <option value="CAETANO">CAETANO</option>
+                        <option value="GIL">GIL</option>
+                        <option value="MURILLO">MURILLO</option>
+                    </select>
+                    <select id="ZAGd">
+                        <option value="">Escolha um zagueiro</option>
+                        <option value="BALBUENA">BALBUENA</option>
+                        <option value="BRUNO MÉNDEZ">BRUNO MÉNDEZ</option>
+                        <option value="CAETANO">CAETANO</option>
+                        <option value="GIL">GIL</option>
+                        <option value="MURILLO">MURILLO</option>
+                    </select>
+                </div>
+                <br><br><br>
+                <div id="goleiro">
+                    <select id="GOL">
+                        <option value="">Escolha um goleiro</option>
+                        <option value="CÁSSIO">CÁSSIO</option>
+                        <option value="CARLOS MIGUEL">CARLOS MIGUEL</option>
+                        <option value="MATHEUS DONELLI">MATHEUS DONELLI</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div id="botaoConfirmar">
+            <button onclick="ConfirmarEscalacao()">Confirmar escalação</button>
+        </div>
+        <br><br>
+
+        <div id="Containergrafico">
+            <h1>Avalição de desempenho</h1>
+            <div id="grafico">
+                <canvas id="myChart"></canvas>
+            </div>
+            <br><br>
+            <div id="botaoAvaliacao">
+                <img src="imagens/gosto.png" alt="gosto" onclick="gosto()" class="GostoEnaoGosto">
+                <img src="imagens/naoGosto.png" alt="naoGosto" onclick="naoGosto()" class="GostoEnaoGosto">
+            </div>
+        </div>
+        <br><br><br><br>
+        <div id="ContainerGame">
+            <div id="Game">
+                <p>Chame um amigo e discuta qual time tem mais chance de ganhar</p>
+                <br>
+                <button onclick="sortear()">Sortear time</button>
+                <br>
+                <div id="Times">
+                    <img src="imagens/escudo-corinthians-2023.svg" alt="" id="CorinthiansGame">
+                    <div id="divX">X</div>
+                    <div id="SegundoTime"></div>
+                </div>
+            </div>
+            <div id="ContainerQtdTitulos">
+            <div id="QtdTitulos">
+            Descobrir qual o campeonato que o Corinthians tem mais títulos e quantos ele tem
+            <br><br>
+            <button onclick="Descobrir()">Descobrir</button>
+            <br>
+            <div id="MensagemDescobrir"></div>
+        </div>
+    </div>
+        </div>
+    </div>
+    <!-- Final página -->
+
+
+    <!-- INICIO FOOTER -->
+    <div id="footer">
+
+        <div id="divLadoEsquerdo">
+            <p id="TituloRedesSociais">REDES SOCIAIS</p>
+            <div id="instaNome">
+                <img src="imagens/icons8-instagram-48.png" alt="Logo instagram" class="logoRedes">
+                <p class="NomeDoSite">CorinthiansNews</p>
+            </div>
+            <div id="faceNome">
+                <img src="imagens/icons8-facebook-48.png" alt="Logo Facebook" class="logoRedes">
+                <p class="NomeDoSite">CorinthiansNews</p>
+            </div>
+        </div>
+        <div id="centroFooter">
+            <p id="TituloRedesSociais">LINKS DA HOME</p>
+            <div id="containerTexntoCentro">
+                <a href="index.html#textoSobreOsite" id="textoCentro">Sobre este blog</a>
+                <a href="index.html#textoSobreOsite" id="textoCentro">Tabela Brasileirão</a>
+                <a href="index.html#Simulador" id="textoCentro">Simulador de porcentagem de vitória</a>
+            </div>
+
+        </div>
+        <div id="divLadoDireito">
+            <p id="TituloRedesSociais">CONTATO</p>
+
+            <div id="conteinarEmail">
+
+                <img src="imagens/icons8-gmail-48.png" alt="icon gmail" class="logoRedes">
+                <p>CorinthiansNews@gmail.com</p>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- FINAL FOOTER -->
+
+</body>
+
+</html>
+
+<script>
+
+    // INICIO PEGAR ESLAÇÃO
+    // VER SE TEM ALGUMA ESLAÇÃO NO BANCO 
+    // CASO TENHA IRÁ PEGAR ELA
+
+    var idUsuarioVar = sessionStorage.ID_USUARIO
+
+    fetch(`/escalacao/listarUmaEscalacao/${idUsuarioVar}`)
+        .then(function (resposta) {
+            if (resposta.status == 204) {
+                alert("Nenhuma escalação encontrada! Atualize sua escalação!")
+            } else {
+                resposta.json()
+                    .then(function (respostaJSON) {
+                        console.log("RESPOSTA: ", respostaJSON)
+
+                        ATA.value = respostaJSON[0].ata;
+                        PE.value = respostaJSON[0].PE;
+                        PD.value = respostaJSON[0].PD;
+                        MEIe.value = respostaJSON[0].MEIe;
+                        MEId.value = respostaJSON[0].MEId;
+                        VOL.value = respostaJSON[0].VOL;
+                        LTe.value = respostaJSON[0].latEsquerda;
+                        LTd.value = respostaJSON[0].latDireita;
+                        ZAGe.value = respostaJSON[0].zagEsquerda;
+                        ZAGd.value = respostaJSON[0].zagDireita;
+                        GOL.value = respostaJSON[0].gol;
+                    })
+            }
+        })
+        .catch(function (erro) {
+            console.log("erro: ", erro);
+        })
+
+    // FIM PEGAR ESLAÇÃO
+
+
+    // INICIO ENVIAR ESCALAÇÃO
+
+    function ConfirmarEscalacao() {
+        var ATAVar = ATA.value;
+        var PEVar = PE.value;
+        var PDVar = PD.value;
+        var MEIeVar = MEIe.value;
+        var MEIdVar = MEId.value;
+        var VOLVar = VOL.value;
+        var LTeVar = LTe.value;
+        var LTdVar = LTd.value;
+        var ZAGeVar = ZAGe.value;
+        var ZAGdVar = ZAGd.value;
+        var GOLVar = GOL.value;
+        var idUsuarioVar = sessionStorage.ID_USUARIO
+
+        // Enviando o valor da nova input
+        fetch("/escalacao/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                ATAServer: ATAVar,
+                PEServer: PEVar,
+                PDServer: PDVar,
+                MEIeServer: MEIeVar,
+                MEIdServer: MEIdVar,
+                VOLServer: VOLVar,
+                LTeServer: LTeVar,
+                LTdServer: LTdVar,
+                ZAGeServer: ZAGeVar,
+                ZAGdServer: ZAGdVar,
+                GOLServer: GOLVar,
+                idUsuarioServer: idUsuarioVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                alert("Escalação salva")
+
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
+        });
+
+        return false;
+
+    }
+
+    // FINAL ENVIAR ESCALAÇÃO
+
+
+    //    INICIO CHART.JS
+    var TotalDeAvaliacoesGostei = 0;
+    var TotalDeAvaliacoesNaoGostei = 0;
+    fetch("/grafico/autenticar")
+        .then(function (resposta) {
+
+            if (resposta.status == 204) {
+                alert("Nenhuma avaliação feita no site")
+            } else {
+                resposta.json()
+                    .then(function (respostaJSON) {
+                        console.log("RESPOSTA: ", respostaJSON)
+
+                        TotalDeAvaliacoesGostei = Number(respostaJSON[0].valorAvalicaoGosto);
+                        TotalDeAvaliacoesNaoGostei = Number(respostaJSON[0].valorAvalicaoNaoGosto);
+
+                    })
+            }
+        })
+        .catch(function (erro) {
+            console.log("erro: ", erro);
+        })
+
+    function gosto() {
+        var valorGosto = 1
+        var valorNaoGosto = 0
+        var idUsuarioVar = sessionStorage.ID_USUARIO
+
+        // Enviando o valor da nova input
+        fetch("/grafico/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                valorGostoServer: valorGosto,
+                valorNaoGostoServer: valorNaoGosto,
+                idUsuarioServer: idUsuarioVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                alert("Avaliação feita")
+
+            } else {
+                throw ("Houve um erro ao tentar fazer a avaliação!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    function naoGosto() {
+        var valorGosto = 0
+        var valorNaoGosto = 1
+        var idUsuarioVar = sessionStorage.ID_USUARIO
+
+        // Enviando o valor da nova input
+        fetch("/grafico/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                valorGostoServer: valorGosto,
+                valorNaoGostoServer: valorNaoGosto,
+                idUsuarioServer: idUsuarioVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                alert("Avaliação feita")
+
+            } else {
+                throw ("Houve um erro ao tentar fazer a avaliação!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    const ctx = document.getElementById('myChart');
+
+    setTimeout(atualizarGrafico, 1000)
+
+    function atualizarGrafico() {
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Estou gostando do time', 'Não estou gostando do time'],
+                datasets: [{
+                    label: 'Avalição de desempenho',
+                    data: [TotalDeAvaliacoesGostei, TotalDeAvaliacoesNaoGostei],
+                    borderWidth: 1
+
+                }
+                ]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            },
+        });
+    }
+
+    // FIM CHART.JS
+    var vtTime = [`<img src="imagens/porto.png" alt="">`, `<img src="imagens/psv.png" alt="">`, `<img src="imagens/newcastle.png" alt="">`, `<img src="imagens/west.png" alt="">`, `<img src="imagens/borussia-dortmund.png" alt="">`, `<img src="imagens/napoli.png" alt="">`, `<img src="imagens/milan.png" alt="">`, `<img src="imagens/sevilla.png" alt="">`, `<img src="imagens/Olympique-de-Marseille.png" alt="">`, `<img src="imagens/olympique-lyonnais.png" alt="">`]
+    // Inicio Sorteio
+    function sortear() {
+        var aleatorio = Math.floor(Math.random() * 10)
+        SegundoTime.innerHTML = `${vtTime[aleatorio]}`
+    }
+
+// Final Sorteio
+
+// Inicio Descobrir
+function Descobrir() {
+    var vtTitulos = [1914,1916,1922,1923,1924,1928,1929,1930,1937,1938,1939,1941,1951,1952,1954,1977,1979,1982,1983,1988,1995,1997,1999,2001,2003,2009,2013,2017,2018,2019]
+    MensagemDescobrir.innerHTML=``
+    for (i = 0; i <= 29; i++) {
+        if (i == 0) {
+            MensagemDescobrir.innerHTML+=`O campeonato que o timão mais ganhou foi o campeonato paulista<br>`
+        }
+        
+        if (i > 0) {
+            if (i % 4 == 0) {
+                MensagemDescobrir.innerHTML+=`<br>`
+            }
+            
+        }
+        MensagemDescobrir.innerHTML+=` ${i+1}º ${vtTitulos[i]}/ `
+        
+        
+    }
+}
+// Final Descobrir
+
+</script>

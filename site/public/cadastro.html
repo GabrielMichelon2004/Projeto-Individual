@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="icon" href="imagens/escudo-corinthians-2023.svg">
+</head>
+
+<body>
+
+    <!-- INICIO HEADER -->
+
+    <div id="navBar">
+        <img src="imagens/escudo-corinthians-2023.svg" alt="Emblema do corinthians" id="Emblema">
+        <div id="Navegacao">
+            <a href="index.html" id="Home" class="links">Home</a>
+            <a href="Noticias.html" class="links">Notícias</a>
+            <a href="Titulos.html" class="links">Títulos</a>
+        </div>
+        <div id="LogarRegistrar">
+            <a href="login.html" id="Login" class="links">Login</a>
+            <span>|</span>
+            <a href="cadastro.html" id="Cadastro" class="links">Cadastro</a>
+        </div>
+    </div>
+
+    <!-- FINAL HEADER -->
+
+    <!-- INICIO CADASTRO -->
+
+    <div id="FundoLogin">
+        <div id="Formulario">
+            <h1>Cadastro</h1>
+            <br><br>
+            <div id="ItensLogin">
+                <p>Nome</p>
+                <input type="text" id="iptNome">
+                <p id="textoFormulario">Email:</p>
+                <input type="email" id="iptEmail">
+                <p>CPF:</p>
+                <input type="text" id="iptCPF">
+                <p>CEP:</p>
+                <input type="text" id="iptCEP">
+                <p id="textoFormulario">Senha:</p>
+                <input type="password" id="iptSenha">
+                <p>Verificação de senha:</p>
+                <input type="password" id="iptVerificSenha">
+                
+                <br><br>
+            </div>
+            <br><br>
+            <div id="ContainerBotao">
+                <button onclick="cadastrar()" id="botao">Cadastrar</button>
+            </div>
+        </div>
+        <div class="alerta_erro">
+            <br><br><br><br><br><br>
+            <div class="card_erro" id="cardErro">
+                <span id="mensagem_erro"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- FINAL CADASTRO -->
+
+    <!-- INICIO FOOTER -->
+    <div id="footer">
+
+        <div id="divLadoEsquerdo">
+            <p id="TituloRedesSociais">REDES SOCIAIS</p>
+            <div id="instaNome">
+                <img src="imagens/icons8-instagram-48.png" alt="Logo instagram" class="logoRedes">
+                <p class="NomeDoSite">CorinthiansNews</p>
+            </div>
+            <div id="faceNome">
+                <img src="imagens/icons8-facebook-48.png" alt="Logo Facebook" class="logoRedes">
+                <p class="NomeDoSite">CorinthiansNews</p>
+            </div>
+        </div>
+        <div id="centroFooter">
+            <p id="TituloRedesSociais">LINKS DA HOME</p>
+            <div id="containerTexntoCentro">
+                <a href="index.html#textoSobreOsite" id="textoCentro">Sobre este blog</a>
+                <a href="index.html#textoSobreOsite" id="textoCentro">Tabela Brasileirão</a>
+                <a href="index.html#Simulador" id="textoCentro">Simulador de porcentagem de vitória</a>
+            </div>
+
+        </div>
+        <div id="divLadoDireito">
+            <p id="TituloRedesSociais">CONTATO</p>
+
+            <div id="conteinarEmail">
+
+                <img src="imagens/icons8-gmail-48.png" alt="icon gmail" class="logoRedes">
+                <p>CorinthiansNews@gmail.com</p>
+            </div>
+
+        </div>
+    </div>
+    <!-- FINAL FOOTER -->
+</body>
+
+</html>
+
+<script>
+    function cadastrar() {
+        //   aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = iptNome.value;
+        var emailVar = iptEmail.value;
+        var cpfVar = iptCPF.value;
+        var cepVar = iptCEP.value;
+        var senhaVar = iptSenha.value;
+        var confirmacaoSenhaVar = iptVerificSenha.value;
+        var verific = true;
+
+        if (nomeVar == "" || emailVar == "" || cpfVar == "" || cepVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Existem campos em branco";
+
+            //  finalizarAguardar();
+            return false;
+        } else {
+            setTimeout(sumirMensagem, 3000)
+        }
+
+        if (iptSenha.value != iptVerificSenha.value) {
+            verific = false;
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "senha diferente de verificação de senha";
+
+            //  finalizarAguardar();
+            return false;
+        } else {
+            setTimeout(sumirMensagem, 3000)
+        }
+
+        if (cpfVar.length != 11) {
+            verific = false;
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "O campo CPF tem que ter 11 caracteres";
+
+            //  finalizarAguardar();
+            return false;
+        } else {
+            setTimeout(sumirMensagem, 3000)
+        }
+
+        if (cepVar.length != 8) {
+            verific = false;
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "O campo CEP tem que ter 8 caracteres";
+
+            //  finalizarAguardar();
+            return false;
+        } else {
+            setTimeout(sumirMensagem, 3000)
+        }
+
+        if (verific == true) {
+            // Enviando o valor da nova input
+            fetch("/usuarios/cadastrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    nomeServer: nomeVar,
+                    emailServer: emailVar,
+                    cpfServer: cpfVar,
+                    cepServer: cepVar,
+                    senhaServer: senhaVar
+                })
+            }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    cardErro.style.display = "block";
+
+                    mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                    setTimeout(() => {
+                        window.location = "login.html";
+                    }, "2000")
+
+                    limparFormulario();
+                    finalizarAguardar();
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+                // finalizarAguardar();
+            });
+
+            return false;
+        }
+
+        function sumirMensagem() {
+            cardErro.style.display = "none"
+        }
+    }
+
+</script>

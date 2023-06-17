@@ -1,0 +1,150 @@
+#Home{
+    color: white;
+}
+#Home:hover{
+    color: wheat;
+}
+#escalacao h1{
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+#escalacao{
+    height: 2000px;
+    background-color: rgba(0, 0, 0, 0.815);
+}
+#containerCampo{
+    height: 780px;
+    width: 100%;
+   
+    display: flex;
+    justify-content: center;
+    
+}
+#campo{
+    height: 780px;
+    width: 600px;
+    background-image: url(../imagens/campo.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 780px;
+}
+#atacante{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 180px;
+    
+}
+#ATA{
+    height: 25px;
+}
+#pontas{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 50px 0px 50px;
+}
+#meias{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 50px 0px 50px;
+   
+}
+#volante{
+    display: flex;
+    justify-content: center;
+}
+#laterais{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 50px 0px 50px;
+}
+#zagueiro{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 130px 0px 130px;
+}
+#goleiro{
+    display: flex;
+    justify-content: center;
+}
+#botaoConfirmar{
+    display: flex;
+    justify-content: center;
+    
+}
+#botaoConfirmar button{
+    cursor: pointer;
+    border-radius: 50px;
+    transition: 0.8s;
+}
+#botaoConfirmar button:hover{
+    background-color: wheat;
+}
+#Containergrafico{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#Containergrafico h1{
+    font-size: 45px;
+}
+#grafico{
+    width: 400px;
+    height: 400px;
+}
+#botaoAvaliacao{
+    display: flex;
+    justify-content: space-around;
+    gap: 25px;
+}
+.GostoEnaoGosto{
+    cursor: pointer;
+    width: 60px;
+    height: 64px;
+}
+#ContainerGame{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    
+}
+#Game{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    border: solid black 2px;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    height: 181px;
+}
+#Game button {
+    width: 100px;
+    border-radius: 10px;
+    display: flex;
+}
+#Times{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+#Game img {
+    width: 50px;
+    height: 50px;
+}
+#divX{
+    margin: 5px;
+}
+#ContainerQtdTitulos{
+    border: solid black 2px;
+    border-radius: 10px;
+}
+#QtdTitulos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    margin: 10px;
+}

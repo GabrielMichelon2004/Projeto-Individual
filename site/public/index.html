@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="imagens/escudo-corinthians-2023.svg">
+</head>
+
+<body>
+
+    <!-- INICIO HEADER -->
+    <div id="navBar">
+        <img src="imagens/escudo-corinthians-2023.svg" alt="Emblema do corinthians" id="Emblema">
+        <div id="Navegacao">
+            <a href="index.html" id="Home" class="links">Home</a>
+            <a href="Noticias.html" class="links">Notícias</a>
+            <a href="Titulos.html" class="links">Títulos</a>
+        </div>
+        <div id="LogarRegistrar">
+            <a href="login.html" class="links">Login</a>
+            <span>|</span>
+            <a href="cadastro.html" class="links">Cadastro</a>
+        </div>
+    </div>
+    <!-- FINAL HEADER -->
+
+<!-- INICIO HOME -->
+<div id="home">
+<img src="imagens/imagemHome_projetoIndividual.webp" alt="bannerTorcidaCorinthians" id="Primeirobanner">
+<!-- <center><h1 id="TituloHome">Notícias, avisos, calendário dos jogos e muito mais</h1></center> -->
+<div id="divisoria1"></div>
+<div id="containerHome">
+    <div id="textoSobreOsite">
+    <h1 id="H1containerHome">Sobre este blog</h1>
+    <p>Sou Gabriel Quessada Michelon, com esse blog pretendo passar muitas notícias atualizadas sobre o Corinthians, sempre mantendo o respeito com o time e com a torcida, quero criar uma comunidade muito ativa no blog e que sempre matém o respeito com todos. 
+        Procuro sempre melhorar o site e deixar mais interativo para a comunidade. Qualquer dúvida ou sugestão para melhorar mandar no email</p>
+        <br>
+        <img src="imagens/calendario.png" alt="Calendário de jogos" id="calendario">
+
+    </div>
+    
+    <!-- <div id="ContainerUltimasPartidas">
+        <h1>Ultimas partidas</h1>
+        <img src="imagens/Capturar.PNG" alt="Ultimas partidas" id="partidas">
+
+    </div> -->
+   
+
+
+    <div id="ContainerTabela">
+        <h1 id="NomeTabela">Tabela Brasileirão</h1>
+        <br>
+        <img src="imagens/tabelaBrasileiro.png" alt="Tabela brasileiro" id="Tabelabrasileiro">
+    </div>
+        
+</div>
+<br><br>
+<div id="divisoria1"></div>
+<div id="FundoSimulador">
+    <div id="ContainerSimulador">
+        <div id="Simulador">
+        <h1>Porcentagem de vitórias</h1>
+        <p>Digite a quantidade e vitórias</p>
+        <input type="text" id="iptVitoria">
+        <p>Digite a quantidade de empates</p>
+        <input type="text" id="iptEmpate">
+        <p>Digite a quantidade de derrotas</p>
+        <input type="text" id="iptDerrota">
+        <br><br><br>
+        <div id="SimuladorBotao">
+            <button onclick="calcular()" id="botaoSimulador">Calcular</button>
+        </div>
+        <br><br>
+        <div id="divMensagem"></div>
+        
+    </div>
+
+    </div>
+</div>
+</div>
+<!-- FINAL HOME -->
+
+    <!-- INICIO FOOTER -->
+    <div id="footer">
+
+        <div id="divLadoEsquerdo">
+            <p id="TituloRedesSociais">REDES SOCIAIS</p>
+            <div id="instaNome">
+                <img src="imagens/icons8-instagram-48.png" alt="Logo instagram" class="logoRedes">
+                <p class="NomeDoSite">CorinthiansNews</p>
+            </div>
+            <div id="faceNome">
+                <img src="imagens/icons8-facebook-48.png" alt="Logo Facebook" class="logoRedes">
+                <p class="NomeDoSite">CorinthiansNews</p>
+            </div>
+        </div>
+        <div id="centroFooter">
+            <p id="TituloRedesSociais">LINKS DA HOME</p>
+            <div id="containerTexntoCentro">
+                <a href="index.html#textoSobreOsite" id="textoCentro">Sobre este blog</a>
+                <a href="index.html#textoSobreOsite" id="textoCentro">Tabela Brasileirão</a>
+                <a href="index.html#Simulador" id="textoCentro">Simulador de porcentagem de vitória</a> 
+            </div>
+            
+        </div>
+        <div id="divLadoDireito">
+            <p id="TituloRedesSociais">CONTATO</p>
+
+            <div id="conteinarEmail">
+                
+                <img src="imagens/icons8-gmail-48.png" alt="icon gmail" class="logoRedes">
+                <p>CorinthiansNews@gmail.com</p>
+            </div>
+
+        </div>
+    </div>
+<!-- FINAL FOOTER -->
+</body>
+
+</html>
+
+<script>
+
+function calcular() {
+    
+    console.log('FUNÇÃO CALCULAR')
+    var axVitoria = Number(iptVitoria.value);
+    var axDerrota = Number(iptDerrota.value);
+    var axEmpate =  Number(iptEmpate.value);
+    var axSomaDasPartidas = axVitoria + axEmpate + axDerrota;
+    var axConta = (axVitoria*100)/axSomaDasPartidas;
+    if (axConta <= 49) {
+        divMensagem.innerHTML=`Nada bom, o timão está com ${axConta.toFixed()}% de vitória` 
+    }
+    if (axConta >= 50 && axConta <=60) {
+        divMensagem.innerHTML=`É possível melhorar, o timão está com ${axConta.toFixed()}% de vitória` 
+    }
+    if (axConta >= 60 && axConta <= 70) {
+        divMensagem.innerHTML=`Até que tá bom, o timão está com ${axConta.toFixed()}% de vitória` 
+    }
+    if (axConta >= 70) {
+        divMensagem.innerHTML=`Muito bom, o timão está com ${axConta.toFixed()}% de vitória` 
+    }
+    
+}
+
+</script>

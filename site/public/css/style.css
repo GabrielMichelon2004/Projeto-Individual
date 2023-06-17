@@ -1,0 +1,271 @@
+body{
+    margin: 0px;
+}
+
+/* HEADER */
+
+#navBar{
+    display: flex;
+    width: 100%;
+    height: 110px;
+    background-color: black;
+    justify-content: space-between;
+    align-items: center;
+}
+#Navegacao{
+    display: flex;
+    color: white;
+    font-size: 21px;
+    gap: 25px;
+   
+}
+#LogarRegistrar{
+    display: flex;
+    color: white;
+    font-size: 21px;
+    gap: 15px;
+    padding: 0px 20px 0px 0px;
+}
+#Emblema {
+    width: 90px;
+    height: 90px;
+    padding: 0px 0px 0px 15px;
+}
+#Home{
+    color: gold;
+}
+.links{
+    text-decoration: none;
+    color: white;
+}
+.links:hover{
+    color: wheat;
+}
+
+/* FINAL HEADER */
+
+/* INICIO HOME */
+#home{
+    display: flex;
+    flex-direction: column;
+}
+
+
+#Primeirobanner {
+    width: 100%;
+    height: 590px;
+}
+
+
+#TituloHome{
+    margin: 0px;
+    font-size: 40px;
+}
+
+#containerHome{
+    width: 95%;
+    padding: 0px 0px 0px 25px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#divisoria1{
+    width: 100%;
+    height: 200px;
+    background-image: url(../imagens/BannerHomenagemAoSenna.png);
+    display: flex;
+}
+#textoSobreOsite{
+    width: 450px;
+}
+#H1containerHome {
+    color: gold;
+    -webkit-text-stroke: 1px black  ;
+}
+/* #ContainerUltimasPartidas{
+    display: flex;
+    flex-direction: column;
+}
+#ContainerUltimasPartidas h1 {
+    margin: 0px;
+    color: gold;
+} */
+#ContainerTabela{
+    display: flex;
+    flex-direction: column;
+}
+#ContainerTabela h1 {
+    margin: 0px;
+}
+#NomeTabela{
+    display: flex;
+    justify-content: center;
+    color: gold;
+    font-size: 35px;
+    -webkit-text-stroke: 1px black;
+}
+
+#Tabelabrasileiro{
+    width: 320px;
+    height: 390px;
+    transition: all 0.5s;
+    border-radius: 15px;
+    box-shadow:  11px 5px 5px black;
+}
+#Tabelabrasileiro:hover{
+    width: 370px;
+    height: 440px;
+}
+
+#calendario{
+    width: 330px;
+    height: 260px;
+    transition: all 0.5s; 
+    border-radius: 15px;
+    box-shadow:  10px 5px 5px black;
+
+}
+#calendario:hover{
+    width: 410px;
+    height: 330px;
+}
+#partidas{
+    width: 400px;
+    height: 360px;
+}
+#FundoSimulador{
+    width: 100%;
+    height: 550px;
+    background-image: url(../imagens/corinthiansXsantos.png);
+    background-repeat: no-repeat;
+    background-size: 100% 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#ContainerSimulador{
+    background-color: #1c1c1cfd;
+    border-radius: 25px;
+    width: 400px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#Simulador h1{
+color: gold;
+}
+#Simulador p {
+    color: white;
+}
+input{
+    border-radius: 10px;
+}
+#SimuladorBotao{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#botaoSimulador{
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100px;
+    transition: 0.8s;
+}
+#botaoSimulador:hover{
+    background-color: wheat;
+}
+#divMensagem{
+    color: white;
+    
+}
+
+/* FINAL HOME */
+
+/* INICIO FOOTER */
+
+ #footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    height: 140px;
+    width: 100%;
+    
+} 
+#divLadoEsquerdo{
+    display: flex;
+    flex-direction: column;
+    height: 110px;
+    
+}
+.logoRedes{
+    width: 32px;
+    height: 32px;
+}
+#TituloRedesSociais{
+    margin: 0px;
+    color: gold;
+    padding: 0px 0px 5px 0px;
+}
+#centroFooter #TituloRedesSociais{
+    padding: 0px 0px 8px 0px;
+}
+#instaNome {
+    display: flex;
+    align-items: center;
+    color: white;
+    height: 40px;
+    
+}
+#instaNome:hover{
+color: wheat;
+}
+#faceNome{
+    display: flex;
+    align-items: center;
+    color: white;
+    height: 40px;
+}
+#faceNome:hover{
+    color: wheat;
+}
+.NomeDoSite{
+    margin: 0px;
+}
+#centroFooter{
+    height: 110px;
+}
+#containerTexntoCentro{
+    display: flex;
+    flex-direction: column;
+}
+
+#textoCentro{
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px 0px 5px 0px;
+    color: white;   
+}
+#textoCentro:hover{
+    color: wheat;
+}
+#conteinarEmail{
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 0px 15px 0px 0px;
+}
+#conteinarEmail:hover{
+    color: wheat;
+}
+#divLadoDireito{
+    height: 110px;
+}
+#divLadoDireito #TituloRedesSociais{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* FINAL FOOTER */
